@@ -23,8 +23,9 @@ stages:
       inputs:
         command: buildAndPush
         buildContext: $(Build.Repository.LocalPath)
-        repository: $(webRepository)
+        repository: 'tailspinspacegame24262/$(webRepository)'
         dockerfile: '$(Build.SourcesDirectory)/Tailspin.SpaceGame.Web/Dockerfile'
+        arguments: --secret 'vMyjsNjbqcPW3IbpES5+g8XIfiyGWPbJ'
         tags: |
           $(tag)
 
@@ -33,8 +34,9 @@ stages:
       inputs:
         command: buildAndPush
         buildContext: $(Build.Repository.LocalPath)
-        repository: $(leaderboardRepository)
+        repository: 'tailspinspacegame24262/$(leaderboardRepository)'
         dockerfile: '$(Build.SourcesDirectory)/Tailspin.SpaceGame.LeaderboardContainer/Dockerfile'
+        arguments: --secret 'vMyjsNjbqcPW3IbpES5+g8XIfiyGWPbJ'
         tags: |
           $(tag)
     
