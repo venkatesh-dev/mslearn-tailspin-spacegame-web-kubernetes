@@ -17,6 +17,7 @@ stages:
     pool:
       vmImage: 'ubuntu-20.04'
     steps:
+    - script: docker login azure --client-id tailspinspacegame24262 --client-secret vMyjsNjbqcPW3IbpES5+g8XIfiyGWPbJ --tenant-id tailspinspacegame24262.azurecr.io
     - task: Docker@2
       displayName: 'Build and push the image to container registry'
       inputs:
